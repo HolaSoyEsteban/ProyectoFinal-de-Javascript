@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link a archivo de estilo -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Link a animaciones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <title>PreEntrega 3</title>
+
+</head>
+<body>
+    <header>
+        <img src="../img/png-transparent-javascript.png" class="logo animate__animated animate__heartBeat animate__infinite">
+        <nav>
+            <ul class="pestanias">
+                <li><a href="../index.html" class="navbar">Inicio</a></li>
+                <li><a href="nosotros.html" class="navbar">Nosotros</a></li>
+                <li><a href="productos.html" class="navbar">Productos</a></li>
+                <li><a href="contacto.html" class="navbar">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="tituloPrincipal">
+            <h1>Productos</h1>
+        </div>
+        <div class="contenidoPrincipal">
+            <div class="todosLosProductos">
+                
+                <div class="productoVistaTarjeta">
+                    <div class="imagenProducto">
+                        <img src="../img/productos/coleccionLibrosSherlockHolmes.jpg" alt="Libros de Sherlock Holmes">
+                    </div>
+                    <!-- Se completa modificando el DOM desde Javascript -->
+                    <div id="SagaSherlock">
+                        <!---->
+                    </div>
+                    
+                    <div class="botonDeAgregarAlCarrito" id="botonSherlock">
+                        <p>Agregar al carrito</p>
+                    </div>
+                </div>
+                <div class="productoVistaTarjeta">
+                    <div class="imagenProducto">
+                        <img src="../img/productos/coleccionLibrosHarryPotter.jpg" alt="Libros de Harry Potter">
+                    </div>
+
+                    <div id="SagaPotter">
+                        <!---->
+                    </div>
+
+                    <div class="botonDeAgregarAlCarrito" id="botonPotter">
+                        <p>Agregar al carrito</p>
+                    </div>
+                </div>
+                <div class="productoVistaTarjeta">
+                    <div class="imagenProducto">
+                        <img src="../img/productos/coleccionLibrosJulioVerne.jpg" alt="Libros de Julio Verne">
+                    </div>
+
+                    <div id="SagaVerne">
+                        <!---->
+                    </div>
+
+                    <div class="botonDeAgregarAlCarrito" id="botonVerne">
+                        <p>Agregar al carrito</p>
+                    </div>
+                </div>
+                <div class="productoVistaTarjeta">
+                    <div class="imagenProducto">
+                        <img src="../img/productos/coleccionLibrosStephenKing.jpg" alt="Libros de Stephen King">
+                    </div>
+
+                    <div id="SagaKing">
+                        <!---->
+                    </div>
+
+                    <div class="botonDeAgregarAlCarrito" id="botonKing">
+                        <p>Agregar al carrito</p>
+                    </div>
+                </div>
+                <div class="productoVistaTarjeta">
+                    <div class="imagenProducto">
+                        <img src="../img/productos/coleccionLibrosMazeRunner.jpg" alt="Libros de Maze Runner">
+                    </div>
+
+                    <div id="SagaRunner">
+                        <!---->
+                    </div>
+
+                    <div class="botonDeAgregarAlCarrito" id="botonRunner">
+                        <p>Agregar al carrito</p>
+                    </div>
+                </div>
+    
+            </div>
+
+            <div class="carrito">
+                <p>Carrito</p>
+                
+                <!-- ---------------- Detalle de la compra --------------- -->
+                <div class="detalleDeCompra" id="contenidoDelCarrito">
+                    
+                </div>
+                <!-- --------------------------------------------------------- -->
+                <div class="muestraDeMontoDeLaCompra">
+                    <div>
+                        <div class="muestraDeMontoDeLaCompraTexto1">
+                            <div><p>Monto Total s/IVA</p></div>
+                            <div id="montoTotalSinIVA"></div>
+                        </div>
+                        <div class="muestraDeMontoDeLaCompraTexto2">
+                            <div><p>Total con IVA incluido</p></div>
+                            <div id="montoTotalConIVA"><p>$</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="BotonesDelCarrito">
+                    <div class="vaciarCarrito" id="Vaciar"><p>Vaciar Carrito</p></div>
+                    <div class="realizarCompra" id="Comprar"><p>Realizar Compra</p></div>
+                </div>
+
+            </div>
+        </div>
+            
+    </main>
+    <footer>
+        <div>
+            <p>
+                En esta página corre el archivo de Javascript
+            </p>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script> 
+</body>
+</html>

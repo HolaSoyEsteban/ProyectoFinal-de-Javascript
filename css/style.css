@@ -1,0 +1,310 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "main main main"
+    "main main main"
+    "main main main"
+    "main main main"
+    "footer footer footer"
+    "footer footer footer";
+}
+
+header {
+    background-color: rgb(255, 255, 255);
+    grid-area: header;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 5vw;
+}
+
+.logo {
+    margin-left: 20px;
+    width: 70px;
+    height: 70px;
+}
+
+nav {
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.pestanias{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-shadow: 5px 4px 4px black;
+    
+}
+
+.navbar {
+    text-decoration: none;
+    font-size: 1rem;
+    color: aliceblue;
+    margin: 5px;
+    padding: 10px;
+    background-color: blueviolet;
+    border-radius: 30px;
+    box-shadow: 5px 5px 8px black;
+}
+
+main {
+    background-color: rgba(0, 0, 0, 0.884);
+    grid-area: main;
+}
+
+.tituloPrincipal {
+    height: 4em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: rgb(216, 216, 215);
+}
+
+.contenidoPrincipal {
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+}
+
+.contenidoPrincipal p {
+    display: block;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 1.8rem;
+}
+
+main .datos {
+    margin-top: 40px;
+    font-size: 1.3rem;
+}
+
+footer {
+    background-color: rgb(202, 202, 0);
+    grid-area: footer;
+}
+
+footer div {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer div p {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ----------------------  Css para pestaña "productos"  ---------------------- */
+
+.todosLosProductos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 110px;
+}
+
+.productoVistaTarjeta {
+    width: 300px;
+    height: 400px;
+    padding: 1rem;
+    border: 5px solid aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(145, 82, 1, 0.454);
+    margin: 5px;
+}
+
+.imagenProducto {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 15px;
+}
+
+.productoVistaTarjeta p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 0, 0, 0.368);
+    text-decoration-thickness: 3px;
+    text-shadow: 3px 3px 4px black;
+}
+
+.precios p {
+    font-size: 1rem;
+    text-decoration: none;
+    text-shadow: 3px 3px 5px black;
+}
+
+.botonDeAgregarAlCarrito {
+    background-color: moccasin;
+    border: 5px solid rgba(255, 228, 181, 0.76);
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 2px 2px 4px black;
+    transition: 0.3s;
+}
+
+.botonDeAgregarAlCarrito:hover {
+    background-color: rgba(224, 156, 39, 0.664);
+    border: 1px solid rgba(224, 156, 39, 0.664);
+    padding: 3px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 2px 2px 4px black;
+}
+
+.botonDeAgregarAlCarrito p {
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    margin-bottom: 0px;
+    text-decoration: none;
+    text-shadow: 2px 2px 5px black;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.botonDeAgregarAlCarrito:hover p{
+    font-size: 1.1rem;
+    color: rgb(255, 255, 255);
+    margin-bottom: 0px;
+    text-decoration: none;
+    text-shadow: 2px 2px 5px black;
+    transition: 0.3s;
+}
+
+/* Carrito */
+.carrito {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 207, 84, 0.491);
+    width: 100%;
+    padding-top: 20px;
+    border: 5px solid white;
+}
+
+.carrito p {
+    color: antiquewhite;
+}
+
+/* -------------- Detalle de compra --------------- */
+.detalleDeCompra {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    border: 2px solid rgb(91, 90, 90);
+    background-color: white;
+}
+
+.detalleDeCompra p {
+    font-size: 1rem;
+    color: rgb(32, 35, 75);
+    text-shadow: 2px 2px 4px black;
+}
+
+/* ----------------------------------------------- */
+.muestraDeMontoDeLaCompra {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.muestraDeMontoDeLaCompraTexto1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 40px;
+}
+
+.muestraDeMontoDeLaCompraTexto2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 40px;
+}
+
+.muestraDeMontoDeLaCompraTexto1 div p {
+    font-size: 1.2rem;
+}
+
+.muestraDeMontoDeLaCompraTexto2 div p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+}
+
+.BotonesDelCarrito {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin: 10px;
+}
+
+.vaciarCarrito {
+    border: 2px solid rgb(132, 0, 0);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    box-shadow: 2px 2px 3px rgb(0, 0, 0);
+}
+
+.vaciarCarrito p {
+    font-size: 0.8rem;
+    color: black;
+    cursor: pointer;
+}
+
+.realizarCompra {
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgb(21, 91, 0);
+    padding: 5px;
+    box-shadow: 2px 2px 3px rgb(0, 0, 0);
+}
+
+.realizarCompra p {
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
