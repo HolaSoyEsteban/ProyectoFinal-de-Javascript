@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "nombre": "Saga de Sherlock Holmes",
+        "precio": 35000,
+        "imagen": "../img/productos/coleccionLibrosSherlockHolmes.jpg"
+    },
+    {
+        "id": "2",
+        "nombre": "Saga de Harry Potter",
+        "precio": 27000,
+        "imagen": "../img/productos/coleccionLibrosHarryPotter.jpg"
+    },
+    {
+        "id": "3",
+        "nombre": "Saga de Julio Verne",
+        "precio": 45000,
+        "imagen": "../img/productos/coleccionLibrosJulioVerne.jpg"
+    },
+    {
+        "id": "4",
+        "nombre": "Saga de Stephen King",
+        "precio": 25000,
+        "imagen": "../img/productos/coleccionLibrosStephenKing.jpg"
+    },
+    {
+        "id": "5",
+        "nombre": "Saga de Maze Runner",
+        "precio": 15000,
+        "imagen": "../img/productos/coleccionLibrosMazeRunner.jpg"
+    }
+]
