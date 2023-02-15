@@ -146,7 +146,7 @@ footer div p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(145, 82, 1, 0.454);
+    background-color: #91520174;
     margin: 5px;
 }
 
@@ -176,7 +176,7 @@ footer div p {
 }
 
 .botonDeAgregarAlCarrito {
-    background-color: moccasin;
+    background-color: #ffe4b5;
     border: 5px solid rgba(255, 228, 181, 0.76);
     border-radius: 10px;
     text-decoration: none;
@@ -212,12 +212,22 @@ footer div p {
     transition: 0.3s;
 }
 
+/* Para alertas de Toastify */
+.paraAlertas{
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgb(185, 111, 111);
+    color: black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 12px black;
+}
+
 /* Carrito */
 .carrito {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    background-color: rgba(255, 207, 84, 0.491);
+    /* background-color: rgba(255, 207, 84, 0.491); */
+    background: linear-gradient(to right, #4b0505, #4a1f00);
     width: 100%;
     padding-top: 20px;
     border: 5px solid white;
@@ -240,6 +250,13 @@ footer div p {
     font-size: 1rem;
     color: rgb(32, 35, 75);
     text-shadow: 2px 2px 4px black;
+}
+
+.contenidoDelDetalle{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-right: 1rem;
 }
 
 /* ----------------------------------------------- */
