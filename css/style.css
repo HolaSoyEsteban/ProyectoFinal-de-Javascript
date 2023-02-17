@@ -270,7 +270,7 @@ footer div p {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-right: 40px;
+    margin-right: 18px;
 }
 
 .muestraDeMontoDeLaCompraTexto2 {
@@ -281,13 +281,14 @@ footer div p {
 }
 
 .muestraDeMontoDeLaCompraTexto1 div p {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .muestraDeMontoDeLaCompraTexto2 div p {
     font-size: 1.4rem;
     font-weight: bold;
     text-shadow: 2px 2px black;
+    color: aliceblue;
 }
 
 .BotonesDelCarrito {
