@@ -1,4 +1,4 @@
-// Funciones
+// Funciones        --- ordenado en orden alfabetico
 
 function agregandoCarritoALLocalStorage(){
     localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -22,6 +22,7 @@ function agregandoProductosAlCarrito(productoParaAgregar){
     mostrarCarritoEnElDOM(carrito)
 }
 
+// Alertas de libreria Toastify para cuando se agrega un producto
 function alertaDeProductoAgregado(){
     Toastify({
         text: "Producto Agregado",
@@ -29,9 +30,9 @@ function alertaDeProductoAgregado(){
         destination: "https://github.com/apvarun/toastify-js",
         newWindow: true,
         close: true,
-        gravity: "bottom", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        gravity: "bottom",
+        position: "right",
+        stopOnFocus: true,
         className: "paraAlertas",
         style: {
           background: "linear-gradient(to right, #ffe4b5, #91520174)",
@@ -99,6 +100,34 @@ function mostrarPrecioFinal(losProductosDelCarrito){
     precioConIva.append(precioConIvaTexto);
 }
 
+function realizarLaCompra(){
+    const botonComprar = document.getElementById("Comprar");
+    botonComprar.addEventListener("click", () => {
+        const carritoLocalStorage = localStorage.getItem("carrito");
+
+        if (carritoLocalStorage !== null){
+            // Alerta de libreria SweetAlert2
+            Swal.fire({
+                title: 'Desea comprar los productos del carrito?',
+                showDenyButton: true,
+                confirmButtonText: 'Confirmar',
+                denyButtonText: `Cancelar`,
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    setTimeout(() => {
+                        localStorage.removeItem("carrito");
+                        location.reload();
+                    },2000);
+
+                    Swal.fire('Has realizado la compra con exito!', '', 'success')
+                } else if (result.isDenied) {
+                  Swal.fire('La compra aún no se realizó', '', 'info')
+                }
+            })
+        }  
+    })
+}
+
 function renderizarProductosEnElHTML(Productos) {
     const listadoDeProductosAlHTML = document.getElementById("todosLosProductos");
     listadoDeProductosAlHTML.innerHTML = "";
@@ -139,62 +168,39 @@ function renderizarProductosEnElHTML(Productos) {
     }
 }
 
-function VaciarCarrito(){
+function vaciarCarrito(){
     const botonVaciar = document.getElementById("Vaciar");
     botonVaciar.addEventListener("click", () => {
-        Swal.fire({
-            title: 'Desea eliminar los productos del carrito?',
-            showDenyButton: true,
-            // showCancelButton: true,
-            confirmButtonText: 'Confirmar',
-            denyButtonText: `Cancelar`,
-          }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
-            if (result.isConfirmed) {
-                setTimeout(() => {
-                    localStorage.clear();
-                    location.reload();
-                },2000);
-                
-                Swal.fire('Productos eliminados!', '', 'success')
-            } else if (result.isDenied) {
-              Swal.fire('Aun conserva los productos en el carrito', '', 'info')
-            }
-        })
+        const carritoLocalStorage = localStorage.getItem("carrito");
+
+        if (carritoLocalStorage !== null){
+            Swal.fire({
+                title: 'Desea eliminar los productos del carrito?',
+                showDenyButton: true,
+                confirmButtonText: 'Confirmar',
+                denyButtonText: `Cancelar`,
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    setTimeout(() => {
+                        localStorage.removeItem("carrito");
+                        location.reload();
+                    },2000);
+                    
+                    Swal.fire('Productos eliminados!', '', 'success')
+                } else if (result.isDenied) {
+                  Swal.fire('Aun conserva los productos en el carrito', '', 'info')
+                }
+            })
+        }
     });
 }
 
-function RealizarLaCompra(){
-    const botonComprar = document.getElementById("Comprar");
-    botonComprar.addEventListener("click", () => {
-        Swal.fire({
-            title: 'Desea comprar los productos del carrito?',
-            showDenyButton: true,
-            // showCancelButton: true,
-            confirmButtonText: 'Confirmar',
-            denyButtonText: `Cancelar`,
-          }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
-            if (result.isConfirmed) {
-                setTimeout(() => {
-                    localStorage.clear();
-                    location.reload();
-                },2000);
-                
-                Swal.fire('Has realizado la compra con exito!', '', 'success')
-            } else if (result.isDenied) {
-              Swal.fire('La compra aún no se realizó', '', 'info')
-            }
-        })
-    })
-}
-
+// ------------ Inicio del programa -----------------------
 const carrito = carritoDelLocalStorage();
 
-VaciarCarrito();
-RealizarLaCompra();
+vaciarCarrito();
+realizarLaCompra();
 mostrarCarritoEnElDOM(carrito);
-
 
 fetch("../js/productos.json")
     .then( (respuestaDelServidor) => {
